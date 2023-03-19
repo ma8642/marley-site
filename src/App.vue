@@ -10,16 +10,16 @@ function handleTouch() {
 
 <template>
   <header>
-    <div class="wrapper">
+    <div class="title-wrapper">
       <SiteTitle />
     </div>
   </header>
-  <div>
+  <div class="nav-wrapper">
     <nav v-on:click="handleTouch">
-      <RouterLink to="/">TECH</RouterLink>
-      <RouterLink to="/about">ACTING</RouterLink>
-      <RouterLink to="/about">OTHER</RouterLink>
-      <RouterLink to="/about">CONNECT</RouterLink>
+      <RouterLink to="/" class="nav-link">TECH</RouterLink>
+      <RouterLink to="/about" class="nav-link">ACTING</RouterLink>
+      <RouterLink to="/about" class="nav-link">OTHER</RouterLink>
+      <RouterLink to="/about" class="nav-link">CONNECT</RouterLink>
     </nav>
   </div>
   <div v-if="touched === true"><RouterView /></div>
@@ -29,5 +29,15 @@ function handleTouch() {
 @font-face {
   font-family: 'Kanit';
   src: local('Kanit'), url(./assets/fonts/Kanit/Kanit-Regular.ttf);
+}
+
+.nav-wrapper {
+  height: 90%;
+  display: flex;
+  align-items: end;
+}
+
+.nav-link {
+  padding: 20px 30px 20px 30px;
 }
 </style>

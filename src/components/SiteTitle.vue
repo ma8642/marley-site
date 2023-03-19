@@ -10,11 +10,6 @@
 h1 {
   font-weight: 500;
   font-size: 3rem;
-  top: -10px;
-}
-
-.siteTitle h1 {
-  text-align: center;
 }
 
 @media (min-width: 1024px) {
