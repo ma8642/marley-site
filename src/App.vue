@@ -16,7 +16,7 @@ function handleTouch() {
   </header>
   <div class="nav-wrapper">
     <nav v-on:click="handleTouch">
-      <RouterLink to="/" class="nav-link">TECH</RouterLink>
+      <RouterLink to="/" class="nav-link green">TECH</RouterLink>
       <RouterLink to="/about" class="nav-link">ACTING</RouterLink>
       <RouterLink to="/about" class="nav-link">OTHER</RouterLink>
       <RouterLink to="/about" class="nav-link">CONNECT</RouterLink>
@@ -32,12 +32,22 @@ function handleTouch() {
 }
 
 .nav-wrapper {
-  height: 90%;
+  height: 100%;
+  /* display: flex;
+  align-items: end; */
+}
+
+nav {
+  height: 100%;
   display: flex;
   align-items: end;
 }
 
 .nav-link {
-  padding: 20px 30px 20px 30px;
+  height: 100%;
+  padding: 100% 30px 20px 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: end;
 }
 </style>
