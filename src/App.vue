@@ -52,9 +52,11 @@ nav {
 
 .nav-link {
   height: 100%;
+  width: 4em;
   padding: 100% 30px 20px 30px;
   text-decoration: none;
   display: flex;
+  justify-content: center;
   align-items: end;
   color: #fcedda;
   opacity: 90%;
