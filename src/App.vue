@@ -16,10 +16,10 @@ function handleTouch() {
   </header>
   <div class="nav-wrapper">
     <nav v-on:click="handleTouch">
-      <RouterLink to="/" class="nav-link green">TECH</RouterLink>
-      <RouterLink to="/about" class="nav-link">ACTING</RouterLink>
-      <RouterLink to="/about" class="nav-link">OTHER</RouterLink>
-      <RouterLink to="/about" class="nav-link">CONNECT</RouterLink>
+      <RouterLink to="/" class="nav-link yellow">TECH</RouterLink>
+      <RouterLink to="/about" class="nav-link green">ACTING</RouterLink>
+      <RouterLink to="/about" class="nav-link purple">OTHER</RouterLink>
+      <RouterLink to="/about" class="nav-link blue">CONNECT</RouterLink>
     </nav>
   </div>
   <div v-if="touched === true"><RouterView /></div>
@@ -33,8 +33,6 @@ function handleTouch() {
 
 .nav-wrapper {
   height: 100%;
-  /* display: flex;
-  align-items: end; */
 }
 
 nav {
@@ -49,5 +47,27 @@ nav {
   text-decoration: none;
   display: flex;
   align-items: end;
+  color: #f0f0f1;
+  opacity: 90%;
+}
+
+.nav-link:hover {
+  opacity: 100%;
+}
+
+.blue {
+  background-color: #00d4a1;
+}
+
+.green {
+  background-color: #ed5300;
+}
+
+.purple {
+  background-color: #7151fe;
+}
+
+.yellow {
+  background-color: #edc900;
 }
 </style>
