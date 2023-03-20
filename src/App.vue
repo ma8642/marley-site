@@ -31,6 +31,15 @@ function handleTouch() {
   src: local('Kanit'), url(./assets/fonts/Kanit/Kanit-Regular.ttf);
 }
 
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* .title-wrapper {
+  width: 100%;
+} */
+
 .nav-wrapper {
   height: 100%;
 }
@@ -47,7 +56,7 @@ nav {
   text-decoration: none;
   display: flex;
   align-items: end;
-  color: #f0f0f1;
+  color: #fcedda;
   opacity: 90%;
 }
 
@@ -56,15 +65,15 @@ nav {
 }
 
 .blue {
-  background-color: #00d4a1;
+  background-color: #11b1cb;
 }
 
 .green {
-  background-color: #ed5300;
+  background-color: #ee4e34;
 }
 
 .purple {
-  background-color: #7151fe;
+  background-color: #8b008b;
 }
 
 .yellow {
