@@ -9,20 +9,23 @@ function handleTouch() {
 </script>
 
 <template>
-  <header>
-    <div class="title-wrapper">
-      <SiteTitle />
+  <div id="main-wrapper">
+    <header>
+      <div class="title-wrapper">
+        <SiteTitle />
+      </div>
+    </header>
+    <div class="nav-wrapper">
+      <nav v-on:click="handleTouch">
+        <RouterLink to="/" class="nav-link yellow">TECH</RouterLink>
+        <RouterLink to="/about" class="nav-link green">ACTING</RouterLink>
+        <RouterLink to="/about" class="nav-link purple">OTHER</RouterLink>
+        <RouterLink to="/about" class="nav-link blue">CONNECT</RouterLink>
+      </nav>
     </div>
-  </header>
-  <div class="nav-wrapper">
-    <nav v-on:click="handleTouch">
-      <RouterLink to="/" class="nav-link yellow">TECH</RouterLink>
-      <RouterLink to="/about" class="nav-link green">ACTING</RouterLink>
-      <RouterLink to="/about" class="nav-link purple">OTHER</RouterLink>
-      <RouterLink to="/about" class="nav-link blue">CONNECT</RouterLink>
-    </nav>
+    <div v-if="touched === true"><RouterView /></div>
   </div>
-  <div v-if="touched === true"><RouterView /></div>
+  <p>Site by Marley</p>
 </template>
 
 <style scoped>
@@ -34,36 +37,6 @@ function handleTouch() {
 header {
   width: 100%;
   display: flex;
-  justify-content: center;
-}
-/* .title-wrapper {
-  width: 100%;
-} */
-
-.nav-wrapper {
-  height: 100%;
-}
-
-nav {
-  height: 100%;
-  display: flex;
-  align-items: end;
-}
-
-.nav-link {
-  height: 100%;
-  width: 4em;
-  padding: 100% 30px 20px 30px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  color: #fcedda;
-  opacity: 90%;
-}
-
-.nav-link:hover {
-  opacity: 100%;
 }
 
 .blue {
@@ -80,5 +53,65 @@ nav {
 
 .yellow {
   background-color: #edc900;
+}
+
+.nav-link {
+  text-decoration: none;
+  display: flex;
+  color: #fcedda;
+  opacity: 90%;
+}
+
+@media (min-width: 360px) {
+  .nav-wrapper {
+    width: 100%;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    justify-content: center;
+  }
+  .nav-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  nav {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+  }
+
+  .nav-link {
+    height: 100%;
+    width: 4em;
+    padding: 100% 30px 20px 30px;
+    justify-content: center;
+    align-items: end;
+    font-size: 1em;
+  }
+
+  .nav-link:hover {
+    opacity: 100%;
+  }
 }
 </style>
