@@ -25,7 +25,7 @@ function handleTouch() {
     </div>
     <div v-if="touched === true"><RouterView /></div>
   </div>
-  <p>Site by Marley</p>
+  <p>Site by <a href="https://github.com/ma8642" target="_blank">Marley</a></p>
 </template>
 
 <style scoped>

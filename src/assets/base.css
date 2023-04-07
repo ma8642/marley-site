@@ -2,4 +2,5 @@ body {
   min-height: 100vh;
   background: 'FCEDDA';
   font-family: 'Kanit', sans-serif;
+  margin: 0;
 }
