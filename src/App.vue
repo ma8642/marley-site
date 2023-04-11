@@ -1,10 +1,19 @@
-<script setup lang="ts">
+<script lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import SiteTitle from './components/SiteTitle.vue'
-let expand: boolean = false
-function handleTouch() {
-  expand = true
-  console.log(expand)
+export default {
+  components: { SiteTitle },
+  data() {
+    return {
+      expand: false
+    }
+  },
+  methods: {
+    async handleTouch() {
+      this.expand = true
+      console.log(this.expand)
+    }
+  }
 }
 </script>
 
@@ -17,14 +26,12 @@ function handleTouch() {
     </header>
     <div class="nav-wrapper">
       <nav>
-        <RouterLink to="/tech" class="nav-link yellow" :click="() => handleTouch()"
-          >TECH</RouterLink
-        >
+        <RouterLink to="/tech" class="nav-link yellow" @click="handleTouch">TECH</RouterLink>
         <RouterLink to="/other" class="nav-link purple">OTHER</RouterLink>
         <RouterLink to="/connect" class="nav-link blue">CONNECT</RouterLink>
       </nav>
     </div>
-    <div><RouterView /></div>
+    <div :class="{ 'expand-tab': expand === true }"><RouterView /></div>
   </div>
   <p>Site by <a href="https://github.com/ma8642" target="_blank">Marley</a></p>
 </template>
@@ -113,6 +120,20 @@ header {
 
   .nav-link:hover {
     opacity: 100%;
+  }
+}
+
+.expand-tab {
+  animation: fillScreen 1s;
+  width: 900px;
+}
+
+@keyframes fillScreen {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100vw;
   }
 }
 </style>
