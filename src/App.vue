@@ -5,13 +5,13 @@ export default {
   components: { SiteTitle, RouterLink, RouterView },
   data() {
     return {
-      expand: false,
+      expand: -1,
       bgColor: 'none'
     }
   },
   methods: {
-    handleTouch(color: string) {
-      this.expand = true
+    handleTouch(tabIndex: number, color: string) {
+      this.expand = tabIndex
       this.bgColor = color
       console.log(this.expand, this.bgColor)
     }
@@ -28,18 +28,26 @@ export default {
     </header>
     <div class="nav-wrapper">
       <nav>
-        <RouterLink to="/tech" class="nav-link yellow" @click="() => handleTouch('yellow')"
+        <RouterLink to="/tech" class="nav-link yellow" @click="() => handleTouch(0, 'yellow')"
           >TECH</RouterLink
         >
-        <RouterLink to="/other" class="nav-link purple" @click="() => handleTouch('purple')"
+        <div :class="{ [`expand-tab ${bgColor}`]: expand === 0, tab: expand != 0, hi: true }">
+          <RouterView />
+        </div>
+        <RouterLink to="/other" class="nav-link purple" @click="() => handleTouch(1, 'purple')"
           >OTHER</RouterLink
         >
-        <RouterLink to="/connect" class="nav-link blue" @click="() => handleTouch('blue')"
+        <div :class="{ [`expand-tab ${bgColor}`]: expand === 1, tab: expand != 1, bi: true }">
+          <RouterView />
+        </div>
+        <RouterLink to="/connect" class="nav-link blue" @click="() => handleTouch(2, 'blue')"
           >CONNECT</RouterLink
         >
+        <div :class="{ [`expand-tab ${bgColor}`]: expand === 2, tab: expand != 2, gi: true }">
+          <RouterView />
+        </div>
       </nav>
     </div>
-    <div :class="{ [`expand-tab ${bgColor}`]: expand === true, tab: true }"><RouterView /></div>
   </div>
   <p>Site by <a href="https://github.com/ma8642" target="_blank">Marley</a></p>
 </template>
@@ -143,6 +151,7 @@ header {
 
 .tab {
   width: 0;
+  display: none;
 }
 
 .expand-tab {
