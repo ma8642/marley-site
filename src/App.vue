@@ -13,7 +13,6 @@ export default {
     handleTouch(tabIndex: number, color: string) {
       this.expand = tabIndex
       this.bgColor = color
-      console.log(this.expand, this.bgColor)
     }
   }
 }
