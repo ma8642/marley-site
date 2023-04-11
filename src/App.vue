@@ -5,13 +5,15 @@ export default {
   components: { SiteTitle },
   data() {
     return {
-      expand: false
+      expand: false,
+      bgColor: 'none'
     }
   },
   methods: {
-    async handleTouch() {
+    handleTouch(color: string) {
       this.expand = true
-      console.log(this.expand)
+      this.bgColor = color
+      console.log(this.expand, this.bgColor)
     }
   }
 }
@@ -26,12 +28,18 @@ export default {
     </header>
     <div class="nav-wrapper">
       <nav>
-        <RouterLink to="/tech" class="nav-link yellow" @click="handleTouch">TECH</RouterLink>
-        <RouterLink to="/other" class="nav-link purple">OTHER</RouterLink>
-        <RouterLink to="/connect" class="nav-link blue">CONNECT</RouterLink>
+        <RouterLink to="/tech" class="nav-link yellow" @click="() => handleTouch('yellow')"
+          >TECH</RouterLink
+        >
+        <RouterLink to="/other" class="nav-link purple" @click="() => handleTouch('purple')"
+          >OTHER</RouterLink
+        >
+        <RouterLink to="/connect" class="nav-link blue" @click="() => handleTouch('blue')"
+          >CONNECT</RouterLink
+        >
       </nav>
     </div>
-    <div :class="{ 'expand-tab': expand === true }"><RouterView /></div>
+    <div :class="{ [`expand-tab ${bgColor}`]: expand === true }"><RouterView /></div>
   </div>
   <p>Site by <a href="https://github.com/ma8642" target="_blank">Marley</a></p>
 </template>
