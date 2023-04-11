@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import SiteTitle from './components/SiteTitle.vue'
 export default {
-  components: { SiteTitle },
+  components: { SiteTitle, RouterLink, RouterView },
   data() {
     return {
       expand: false,
@@ -39,7 +39,7 @@ export default {
         >
       </nav>
     </div>
-    <div :class="{ [`expand-tab ${bgColor}`]: expand === true }"><RouterView /></div>
+    <div :class="{ [`expand-tab ${bgColor}`]: expand === true, tab: true }"><RouterView /></div>
   </div>
   <p>Site by <a href="https://github.com/ma8642" target="_blank">Marley</a></p>
 </template>
@@ -75,7 +75,7 @@ header {
   text-decoration: none;
   display: flex;
   color: #fcedda;
-  opacity: 90%;
+  opacity: 100%;
 }
 
 @media (min-width: 360px) {
@@ -127,13 +127,27 @@ header {
   }
 
   .nav-link:hover {
-    opacity: 100%;
+    animation: smallStretch 0.5s ease;
+    width: 95px;
   }
+}
+
+@keyframes smallStretch {
+  from {
+    width: 90px;
+  }
+  to {
+    width: 95px;
+  }
+}
+
+.tab {
+  width: 0;
 }
 
 .expand-tab {
   animation: fillScreen 1s;
-  width: 900px;
+  width: 100vw;
 }
 
 @keyframes fillScreen {
