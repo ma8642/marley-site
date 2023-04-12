@@ -12,6 +12,7 @@ export default {
   methods: {
     handleTouch(tabIndex: number, color: string) {
       if (this.expand === tabIndex) {
+        // if use clicks an open tab, close it
         this.expand = -1
       } else {
         this.expand = tabIndex
