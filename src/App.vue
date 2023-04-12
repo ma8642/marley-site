@@ -11,8 +11,12 @@ export default {
   },
   methods: {
     handleTouch(tabIndex: number, color: string) {
-      this.expand = tabIndex
-      this.bgColor = color
+      if (this.expand === tabIndex) {
+        this.expand = -1
+      } else {
+        this.expand = tabIndex
+        this.bgColor = color
+      }
     }
   }
 }
