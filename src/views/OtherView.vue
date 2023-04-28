@@ -1,7 +1,17 @@
+<script lang="ts">
+import TabView from './TabView.vue'
+export default {
+  components: { TabView }
+}
+</script>
 <template>
-  <div class="about">
-    <h1>This is the Other page</h1>
-  </div>
+  <TabView>
+    <h1>Other</h1>
+    <h2>Fun Projects</h2>
+    <h2>Art</h2>
+    <h2>Acting</h2>
+    <h2>Services</h2>
+  </TabView>
 </template>
 
 <style>

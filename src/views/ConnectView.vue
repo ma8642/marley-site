@@ -1,7 +1,15 @@
+<script lang="ts">
+import TabView from './TabView.vue'
+export default {
+  components: { TabView }
+}
+</script>
 <template>
-  <div class="about">
-    <h1>This is the Connect page</h1>
-  </div>
+  <TabView>
+    <h1>Email</h1>
+    <h2>Linkedin</h2>
+    <h2>Shlinkedin</h2>
+  </TabView>
 </template>
 
 <style>
