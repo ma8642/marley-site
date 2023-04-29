@@ -1,15 +1,16 @@
 <template>
-  <div class="about">
+  <div class="tab-container">
     <slot></slot>
   </div>
 </template>
 
 <style>
 @media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
+  .tab-container {
+    height: 100vh;
     display: flex;
     align-items: center;
+    overflow-y: auto;
   }
 }
 </style>
